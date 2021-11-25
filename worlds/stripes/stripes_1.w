@@ -1,0 +1,3 @@
+Dimension: (6, 5)
+Karel: (1, 1); east
+BeeperBag: INFINITY
