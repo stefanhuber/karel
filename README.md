@@ -12,20 +12,76 @@ Durch Öffnen des Projektes in [Pycharm](https://www.jetbrains.com/pycharm/) sol
 
 ## Karel Funktionen
 
-| Karel Funktionen     |                        |                          |
-| -------------------- | ---------------------- | ------------------------ |
-| `move()`             | `right_is_clear()`     | `facing_east()`          |
-| `turn_left()`        | `right_is_blocked()`   | `not_facing_east()`      |
-| `put_beeper()`       | `beepers_present()`    | `facing_west()`          |
-| `pick_beeper()`      | `no_beepers_present()` | `not_facing_west()`      |
-| `front_is_clear()`   | `beepers_in_bag()`     | `facing_south()`         |
-| `front_is_blocked()` | `no_beepers_in_bag()`  | `not_facing_south()`     |
-| `left_is_clear()`    | `facing_north()`       | `paint_corner(color)`    |
-| `left_is_blocked()`  | `not_facing_north()`   | `corner_color_is(color)` |
+### Bewegung 
+
+| Funktion | Beschreibung |
+| --- | --- |
+| `move()` | Karel bewegt sich eine Zelle in Blickrichtung |
+| `turn_left()` | Karel dreht sich 90° nach links |
+| `front_is_clear()` | Karel prüft ob er nach vorne gehen kann |
+| `front_is_blocked()` | Karel prüft ob er nicht nach vorne gehen kann |
+| `left_is_clear()` | Karel prüft ob er nach links gehen kann |
+| `left_is_blocked()` | Karel prüft ob er nicht nach links gehen kann |
+| `right_is_clear()` | Karel prüft ob er nach rechts gehen kann |
+| `right_is_blocked()` | Karel prüft ob er nicht nach links gehen kann |
+| `facing_north()` | Karel prüft ob er nach oben schaut |
+| `not_facing_north()` | Karel prüft ob er nicht nach oben schaut |
+| `facing_east()` | Karel prüft ob er nach rechts schaut  |
+| `not_facing_east()` | Karel prüft ob er nicht nach oben schaut  |
+| `facing_west()` | Karel prüft ob er nach links schaut |
+| `not_facing_west()` | Karel prüft ob er nicht nach links schaut |
+| `facing_south()` | Karel prüft ob er nach unten schaut  |
+| `not_facing_south()` | Karel prüft ob er nicht nach unten schaut |
+
+### Beeper
+
+| Funktion | Beschreibung |
+| --- | --- |
+| `put_beeper()` | Karel legt einen Beeper ab |
+| `pick_beeper()` | Karel nimmt einen Beeper auf |
+| `beepers_present()` | Karel prüft ob Beeper in der Zelle liegen |
+| `no_beepers_present()` | Karel prüft ob keine Beeper in der Zelle liegen  |
+| `beepers_in_bag()` | Karel prüft ob Beeper in seiner Tasche liegen |
+| `no_beepers_in_bag()` | Karel prüft ob keine Beeper in seiner Tasche liegen |
+
+### Farben
+
+| Funktion | Beschreibung |
+| --- | --- |
+| `paint_corner(color)` | Karel färbt die Zelle mit der Farbe `color` |
+| `corner_color_is(color)` | Karel prüft, ob die Zelle die Farbe `color` hat |
+
+#### Farbwerte
+
+ - `RED`
+ - `BLACK`
+ - `CYAN`
+ - `DARK_GRAY`
+ - `GRAY`
+ - `GREEN`
+ - `LIGHT_GRAY`
+ - `MAGENTA`
+ - `ORANGE`
+ - `PINK`
+ - `WHITE`
+ - `BLUE`
+ - `YELLOW`
+ - `BLANK`
 
 ## Aufgaben
 
-### 01 Collect Newspaper
+### 01 Hospital
+
+![Hospital](./docs/hospitalstart.png)
+
+ 1. Karel startet in der linken unteren Ecke
+ 2. Karel soll bis zur rechten unteren Ecke wandern
+ 3. Alle Beeper die Karel findet, soll er in ein Hospital verwandeln
+ 4. Karel endet an der rechten unteren Ecke
+
+![Hospital](./docs/hospitalend.png)
+
+### 02 Collect Newspaper
 
 ![Collect Newspaper](./docs/newspaper.png)
 
@@ -33,7 +89,7 @@ Durch Öffnen des Projektes in [Pycharm](https://www.jetbrains.com/pycharm/) sol
  2. Karel soll die Zeitung vor der Türe holen 
  3. Karel soll zurück an die Startposition geführt werden
 
-### 02 Arches
+### 03 Arches
 
 ![Start](./docs/efesBroken.png)
 
@@ -43,7 +99,7 @@ Durch Öffnen des Projektes in [Pycharm](https://www.jetbrains.com/pycharm/) sol
 
 ![Ende](./docs/efesRepaired.png)
 
-### 03 Squares
+### 04 Squares
 
  1. Karel startet in der linken unteren Ecke
  2. Karel soll eine Mauer um die quadratische Welt bauen
@@ -54,7 +110,7 @@ Die Welt kann eine beliebige Größe haben
 ![Example 1](./docs/world1.png)
 ![Example 2](./docs/world2.png)
 
-### 04 Mountains
+### 05 Mountains
 
 ![Mountains](./docs/mountain0.png)
 
@@ -69,7 +125,7 @@ Die Welt kann eine beliebige Größe haben:
 
 ![Mountains](./docs/mountains.png)
 
-### 05 Treasure
+### 06 Treasure
 
 ![Treasure](./docs/treasure1.png)
 
@@ -81,7 +137,7 @@ Die Welt kann eine beliebige Größe haben:
 
 Die Welt kann eine beliebige Größe haben
 
-### 06 Stripes
+### 07 Stripes
 
  1. Karel startet in der linken unteren Ecke
  2. Karel soll alle ungeraden Zeilen mit Beeper füllen
@@ -97,7 +153,27 @@ Die Welt kann auch Wände haben, welche nicht passierbar sind
 
 ![Stripes](./docs/stripes3.png)
 
-### 07 Random Colors
+### 08 Invert
+
+ 1. Karel startet in der linken unteren Ecke
+ 2. Karel soll bis an die linke obere Ecke Wandern und alle Zeilen durchgehen
+ 3. Dabei soll Karel alle Beeper aufnehmen und in allen Zellen die leer sind einen Beeper ablegen (Welt invertieren)
+ 4. Karel endet in der linken oberen Ecke
+
+![Invert](./docs/invert.png)
+
+### 09 Spring
+
+![Spring Flowers](./docs/banishWinter1.png)
+
+ 1. Karel startet in der linken unteren Ecke
+ 2. Karel soll bis in die rechte untere Ecke Wandern
+ 3. Alle Blumenstängel sollen mit einer Blume geschmückt werden
+ 4. Karel endet in der rechten unteren Ecke
+
+![Spring Flowers](./docs/banishWinter2.png)
+
+### 10 Random Colors
 
  1. Karel startet in der linken unteren Ecke
  2. Karel soll jede Zelle mit einer zufälligen Farbe tapezieren
@@ -105,3 +181,29 @@ Die Welt kann auch Wände haben, welche nicht passierbar sind
 
 ![Color](./docs/color.png)
 
+## Welt Format
+
+Zur Definition einer Karel Welt kann eine einfache Textdatei verwendet werden, welche die Dateiendung `.w` hat.
+
+In der Datei befinden sich je Zeile Definitionen für die Welt. Die Welt orientiert sich an einem Koordinatensystem entlang der `x` bzw. `y` Achse. Der Ursprung des Koordinatensystems ist die Zelle links unten mit Koordinate `(1, 1)`.
+
+ 1. `Dimension: (x_len, y_len)` Mit dieser Zeile wird die Weltgröße definiert (`x_len`, `y_len` sind zu setzen)
+ 2. `Karel: (x, y); orientation` Mit `x` und `y` wird die Koordinate von Karel definiert, mit `orientation` (`west`, `east`, `south`, `north`) wird die Himmelsrichtung definiert, in die Karel blickt.
+ 3. `Beeper: (x, y); count` Mit `x` und `y` wird die Koordinate eines Beeper definiert, mit `count` wird die Anzahl der Beeper definiert (zB `1`)
+ 4. `Wall: (x, y); orientation` Mit `x` und `y` wird die Koordinate der Zelle definiert, in der die Wand platziert werden soll. Mit `orientation` wird die Position der Wand mit Referenz zur Zelle definiert (`west`, `east`, `south`, `north`). Mit `west` würde die Wand an der linken Seite der Zelle platziert.
+ 5. `BeeperBag: count` Mit `count` wird die Anzahl der Beeper in Karel’s Tasche definiert, entweder eine Ganzzahl oder der Wert `INFINITY` 
+
+### Beispiel
+
+```text
+Dimension: (5, 6)
+Wall: (1, 3); south
+Wall: (1, 4); east
+Wall: (1, 5); east
+Wall: (2, 3); west
+Wall: (2, 5); north
+Wall: (3, 5); north
+Beeper: (1, 3); 1
+Karel: (1, 1); east
+BeeperBag: INFINITY
+```
